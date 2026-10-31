@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    
+    <!-- Todos os links de conexão e estilos ficam aqui no <head> -->
+    <link rel="stylesheet" href="novoestilo.css">
+    <style>
+    @import url('https://googleapis.com');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f19;
+    color: #f3f4f6;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.avatar-foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(127, 0, 255, 0.4);
+    display: block;
+    object-fit: cover;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ff007f, #7f00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-left: 4px solid #7f00ff;
+    padding-left: 12px;
+    color: #ffffff;
+    margin-top: 40px;
+}
+
+.subtitulo {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card-projeto {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(127, 0, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-projeto h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.card-projeto p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.btn-link {
+    color: #ff007f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.btn-link:hover {
+    color: #7f00ff;
+}
+
+/* Tabuleiro do Jogo da Velha */
+.container-jogo {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.celula {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.celula:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #7f00ff, #ff007f);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(127, 0, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+}
+</style>
+    <link rel="stylesheet" href="jogo2.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <img src="Raquelperfil.jpeg" class="avatar-foto" alt="Avatar de Raquel Guimarães">
+            <h1>Raquel Guimarães</h1>
+            <p class="subtitulo destaque-dev">Desenvolvedora Front-End</p>
+        </header>
+
+        <section>
+            <h2>Meus novos projetos</h2>
+            <div class="grid-projetos">
+                
+                <div class="card-projeto">
+                    <div>
+                        <h3>E-commerce</h3>
+                        <p>Criado usando HTML semântico e CSS Flexbox/Grid para adaptação em celulares.</p>
+                    </div>
+                </div>
+
+                <div class="card-projeto">
+                    <div>
+                        <h3>App novos</h3>
+                        <p>Aplicativo mobile desenvolvido com React Native.</p>
+                    </div>
+                    <a href="https://github.com/raquel-dev70" target="_blank" class="btn-link">Acessar projeto</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SEÇÃO DO JOGO DA VELHA -->
+        <section>
+            <h2>Desafio: Jogo da Velha</h2>
+            <p class="subtitulo" style="text-align: center; margin-bottom: 20px;">
+                Jogue localmente! Vez do jogador: <span id="turno" style="color: #ff007f; font-weight: bold;">X</span>
+            </p>
+            
+            <div class="container-jogo">
+                <div class="tabuleiro" id="tabuleiro">
+                    <div class="celula" data-index="0"></div>
+                    <div class="celula" data-index="1"></div>
+                    <div class="celula" data-index="2"></div>
+                    <div class="celula" data-index="3"></div>
+                    <div class="celula" data-index="4"></div>
+                    <div class="celula" data-index="5"></div>
+                    <div class="celula" data-index="6"></div>
+                    <div class="celula" data-index="7"></div>
+                    <div class="celula" data-index="8"></div>
+                </div>
+                <button id="btnReiniciar" style="max-width: 200px; margin: 25px auto 0; display: block;">Reiniciar</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- LÓGICA DO JOGO EM JAVASCRIPT TOTALMENTE CORRIGIDA -->
+    <script>
+        const tabuleiro = document.getElementById('tabuleiro');
+        const celulas = document.querySelectorAll('.celula');
+        const statusTurno = document.getElementById('turno');
+        const btnReiniciar = document.getElementById('btnReiniciar');
+        
+        let turnoX = true;
+        let jogoAtivo = true;
+        let estadoJogo = ["", "", "", "", "", "", "", "", ""];
+
+        // Todas as 8 combinações de vitória mapeadas corretamente
+        const combinacoesVitoria = [, [3, 4, 5], [6, 7, 8], // Linhas, [1, 4, 7], [2, 5, 8], // Colunas, [2, 4, 6]             // Diagonais
+        ];
+
+        function verificarResultado() {
+            let rodadaGanhou = false;
+            for (let i = 0; i < combinacoesVitoria.length; i++) {
+                const condicao = combinacoesVitoria[i];
+                let a = estadoJogo[condicao[0]];
+                let b = estadoJogo[condicao[1]];
+                let c = estadoJogo[condicao[2]];
+                
+                if (a === '' || b === '' || c === '') continue;
+                if (a === b && b === c) {
+                    rodadaGanhou = true;
+                    break;
+                }
+            }
+
+            if (rodadaGanhou) {
+                alert(`Jogador ${turnoX ? 'O' : 'X'} venceu! 🎉`);
+                jogoAtivo = false;
+                return;
+            }
+
+            if (!estadoJogo.includes("")) {
+                alert("Deu velha! Empatou! 🤝");
+                jogoAtivo = false;
+            }
+        }
+
+        // Captura os cliques nas células do jogo
+        celulas.forEach((celula, indice) => {
+            celula.addEventListener('click', () => {
+                if (estadoJogo[indice] !== "" || !jogoAtivo) return;
+                
+                estadoJogo[indice] = turnoX ? "X" : "O";
+                celula.textContent = turnoX ? "X" : "O";
+                celula.style.color = turnoX ? "#ff007f" : "#7f00ff";
+                
+                turnoX = !turnoX;
+                statusTurno.textContent = turnoX ? "X" : "O";
+                verificarResultado();
+            });
+        });
+
+        // Evento do botão reiniciar
+        btnReiniciar.addEventListener('click', () => {
+            turnoX = true;
+            jogoAtivo = true;
+            estadoJogo = ["", "", "", "", "", "", "", "", ""];
+            statusTurno.textContent = "X";
+            celulas.forEach(celula => {
+                celula.textContent = "";
+                celula.style.color = "";
+            });
+        });
+    </script>
+</body>
+</html>
